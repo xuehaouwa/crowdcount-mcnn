@@ -1,5 +1,5 @@
-from crowd_count import CrowdCounter
-import network
+from src.crowd_count import CrowdCounter
+from src import network
 import numpy as np
 
 
@@ -21,4 +21,4 @@ def evaluate_model(trained_model, data_loader):
         mse += ((gt_count-et_count)*(gt_count-et_count))        
     mae = mae/data_loader.get_num_samples()
     mse = np.sqrt(mse/data_loader.get_num_samples())
-    return mae,mse
+    return mae, mse

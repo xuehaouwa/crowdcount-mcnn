@@ -1,6 +1,6 @@
 import torch.nn as nn
-import network
-from models import MCNN
+import src.network as network
+from src.models import MCNN
 
 
 class CrowdCounter(nn.Module):
@@ -8,6 +8,7 @@ class CrowdCounter(nn.Module):
         super(CrowdCounter, self).__init__()        
         self.DME = MCNN()        
         self.loss_fn = nn.MSELoss()
+        self.loss_mse = None
         
     @property
     def loss(self):
